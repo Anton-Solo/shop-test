@@ -1,0 +1,119 @@
+.products {
+  padding: 100px 0 20px 80px;
+  @media (max-width: 1250px) {
+    padding-left: 150px;
+  }
+  &-head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .products-indicator {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 170.23%;
+      color: #ffffff;
+      opacity: 1;
+      background: #343a40;
+      box-shadow: 0px 4px 30px rgba(4, 20, 32, 0.1);
+      border-radius: 4px;
+      padding: 4px 12px;
+    }
+    &__title {
+      font-size: 19px;
+      line-height: 19px;
+      font-weight: 600;
+      margin-right: 20px;
+    }
+    &__sort {
+      display: flex;
+      align-items: center;
+      &--name {
+        font-size: 14px;
+        line-height: 14px;
+        margin-right: 5px;
+      }
+      &--select {
+        width: 300px;
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 4px;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-wrapper {
+    margin-top: 20px;
+    .item {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      background-color: #ffffff;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 5px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      &-image {
+        width: 100px;
+        @media (max-width: 768px) {
+          width: 50px;
+        }
+      }
+      &-name {
+        span {
+          display: block;
+          &:first-child {
+            font-weight: 600;
+            margin-bottom: 3px;
+          }
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+      &-type {
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+      &-action {
+        cursor: pointer;
+        @media (max-width: 768px) {
+          svg {
+            width: 40px;
+          }
+        }
+      }
+      &-garantue,
+      &-price {
+        span {
+          display: block;
+          &:first-child {
+            margin-bottom: 3px;
+          }
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+      &-comes {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

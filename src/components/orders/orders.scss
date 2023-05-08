@@ -1,0 +1,160 @@
+.orders {
+  padding: 100px 0 20px 80px;
+  @media (max-width: 1250px) {
+    padding-left: 150px;
+  }
+  &-head {
+    display: flex;
+    align-items: center;
+
+    &__title,
+    &__num {
+      font-size: 19px;
+      line-height: 19px;
+      font-weight: 600;
+    }
+    &__num {
+      margin-left: 3px;
+    }
+  }
+  &-wrapper {
+    margin-top: 20px;
+
+    .item {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      background-color: #ffffff;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 5px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &-name {
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+
+      &-image {
+        width: 100px;
+        @media (max-width: 768px) {
+          width: 50px;
+        }
+      }
+
+      &-action {
+        cursor: pointer;
+      }
+
+      &-date,
+      &-quantity {
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+        span {
+          display: block;
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+        &__short {
+          margin-bottom: 3px;
+        }
+      }
+      &-price {
+        span {
+          display: block;
+          &:nth-child(1) {
+            margin-bottom: 3px;
+          }
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 4px;
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background: rgba(31, 40, 49, 0.4);
+    display: flex;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__close {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 10px 20px;
+    border-bottom: 1px solid gray;
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 5px 10px;
+    &--image {
+      width: 100px;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgb(70, 188, 70);
+    padding: 10px 10px 20px;
+    width: 100%;
+    &--reject {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-right: 10px;
+      transition: all 0.5s ease-in;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &--aprove {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 150px;
+      background-color: #ffffff;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgb(144, 12, 12);
+      cursor: pointer;
+      transition: all 0.5s ease-in;
+      &:hover {
+        background-color: rgb(144, 12, 12);
+        color: #ffffff;
+      }
+    }
+  }
+}
